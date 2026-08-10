@@ -1,1 +1,1051 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Método DECIDIR® | Bootcamp</title>
+  <meta name="description" content="No necesitas más información. Necesitas aprender qué hacer con lo que ya sabes. Bootcamp DECIDIR® — primera generación.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --blue: #173B70;
+      --blue-light: #2F6FAE;
+      --black: #08090B;
+      --white: #FFFFFF;
+      --gray: #A7ADB6;
+      --gray-light: #E9ECF0;
+      --dark-gray: #181B20;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1180px, 90%);
+      margin: auto;
+    }
+
+    /* NAV */
+
+    nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      padding: 28px 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 4px;
+    }
+
+    .nav-tag {
+      color: var(--gray);
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 120px 0 80px;
+      background:
+        radial-gradient(circle at 80% 25%, rgba(23,59,112,.35), transparent 30%),
+        radial-gradient(circle at 20% 80%, rgba(47,111,174,.12), transparent 25%),
+        var(--black);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border: 1px solid rgba(47,111,174,.18);
+      border-radius: 50%;
+      right: -180px;
+      top: 15%;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      color: #5D91C8;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(48px, 6vw, 82px);
+      line-height: .98;
+      font-weight: 600;
+      letter-spacing: -2px;
+      margin-bottom: 30px;
+    }
+
+    h1 span {
+      color: #4C83BB;
+    }
+
+    .hero-text {
+      color: #C7CBD1;
+      font-size: 18px;
+      max-width: 600px;
+      margin-bottom: 32px;
+    }
+
+    .event-info {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .event-info div {
+      border-left: 2px solid var(--blue);
+      padding-left: 12px;
+    }
+
+    .event-info strong {
+      display: block;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .event-info small {
+      color: var(--gray);
+      font-size: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--blue);
+      color: white;
+      padding: 16px 28px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: .3s ease;
+      border: 1px solid var(--blue);
+    }
+
+    .btn:hover {
+      background: var(--blue-light);
+      transform: translateY(-2px);
+    }
+
+    /* VSL */
+
+    .video-wrapper {
+      position: relative;
+    }
+
+    .video-label {
+      color: var(--gray);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .video {
+      aspect-ratio: 16 / 9;
+      background:
+        linear-gradient(rgba(8,9,11,.25), rgba(8,9,11,.65)),
+        linear-gradient(135deg, #111820, #173B70);
+      border: 1px solid rgba(255,255,255,.12);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 25px 80px rgba(0,0,0,.5);
+      overflow: hidden;
+    }
+
+    .video::after {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(255,255,255,.1);
+      pointer-events: none;
+    }
+
+    .play {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 40px rgba(23,59,112,.5);
+      position: relative;
+      z-index: 2;
+    }
+
+    .play::after {
+      content: "";
+      margin-left: 5px;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 15px solid white;
+    }
+
+    .video-copy {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      z-index: 2;
+    }
+
+    .video-copy strong {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+    }
+
+    .video-copy small {
+      display: block;
+      color: #BDC3CB;
+      margin-top: 4px;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 120px 0;
+    }
+
+    .white-section {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .gray-section {
+      background: var(--gray-light);
+      color: var(--black);
+    }
+
+    .blue-section {
+      background: var(--blue);
+      color: white;
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--blue-light);
+      margin-bottom: 18px;
+    }
+
+    .white-section .section-label,
+    .gray-section .section-label {
+      color: var(--blue);
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(40px, 5vw, 68px);
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+      margin-bottom: 25px;
+      max-width: 900px;
+    }
+
+    .lead {
+      font-size: 19px;
+      max-width: 760px;
+      color: #656B74;
+    }
+
+    .dark-lead {
+      color: #BFC4CB;
+    }
+
+    /* PROBLEM */
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .problem-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .problem-item {
+      padding: 22px;
+      border: 1px solid #D9DDE2;
+      background: #FAFAFA;
+    }
+
+    .problem-item span {
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    /* METHOD */
+
+    .method-intro {
+      max-width: 780px;
+      margin-bottom: 60px;
+    }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,.15);
+    }
+
+    .method-card {
+      background: var(--black);
+      padding: 30px 22px;
+      min-height: 230px;
+    }
+
+    .method-number {
+      color: #4C83BB;
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 30px;
+    }
+
+    .method-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 27px;
+      margin-bottom: 12px;
+    }
+
+    .method-card p {
+      color: #AEB4BC;
+      font-size: 14px;
+    }
+
+    /* DAYS */
+
+    .days {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 60px;
+    }
+
+    .day-card {
+      border: 1px solid #D7DBE0;
+      padding: 40px 30px;
+      min-height: 320px;
+      background: white;
+    }
+
+    .day-number {
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      margin-bottom: 25px;
+    }
+
+    .day-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .day-card p {
+      color: #626872;
+    }
+
+    .result {
+      margin-top: 30px;
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    /* DIFFERENCE */
+
+    .difference {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .big-statement {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(38px, 5vw, 70px);
+      line-height: 1.08;
+      margin: 35px 0;
+    }
+
+    /* AUTHORITY */
+
+    .authority-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .photo-placeholder {
+      min-height: 560px;
+      background: linear-gradient(145deg, #111, #173B70);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,.5);
+      letter-spacing: 2px;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+
+    .authority-points {
+      display: grid;
+      gap: 18px;
+      margin-top: 35px;
+    }
+
+    .authority-point {
+      border-top: 1px solid #D7DBE0;
+      padding-top: 18px;
+    }
+
+    .authority-point strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .authority-point span {
+      color: #666D76;
+      font-size: 14px;
+    }
+
+    /* OFFER */
+
+    .offer {
+      text-align: center;
+      max-width: 760px;
+      margin: auto;
+    }
+
+    .price {
+      font-family: 'Playfair Display', serif;
+      font-size: 78px;
+      line-height: 1;
+      margin: 25px 0;
+    }
+
+    .price span {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      color: #AEB4BC;
+    }
+
+    .included {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      text-align: left;
+      margin: 45px 0;
+    }
+
+    .included div {
+      padding: 15px;
+      border: 1px solid rgba(255,255,255,.15);
+      color: #D7DBE0;
+    }
+
+    .included div::before {
+      content: "✓";
+      color: #5D91C8;
+      margin-right: 10px;
+    }
+
+    /* FINAL */
+
+    .final {
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .final::before {
+      content: "DECIDIR";
+      position: absolute;
+      font-family: 'Playfair Display', serif;
+      font-size: 20vw;
+      color: rgba(255,255,255,.025);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      white-space: nowrap;
+    }
+
+    .final-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+
+    .final h2 {
+      margin: 0 auto 25px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 35px 0;
+      background: #050608;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: #727984;
+      font-size: 12px;
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .problem-grid,
+      .authority-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 130px;
+      }
+
+      .method-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .days {
+        grid-template-columns: 1fr;
+      }
+
+      .authority-grid {
+        gap: 40px;
+      }
+
+      .photo-placeholder {
+        min-height: 400px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        padding: 20px 0;
+      }
+
+      .nav-tag {
+        display: none;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      h1 {
+        font-size: 47px;
+      }
+
+      h2 {
+        font-size: 42px;
+      }
+
+      .hero-text {
+        font-size: 16px;
+      }
+
+      .event-info {
+        gap: 15px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .included {
+        grid-template-columns: 1fr;
+      }
+
+      .price {
+        font-size: 65px;
+      }
+
+      footer .container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="container nav-inner">
+      <div class="brand">DECIDIR®</div>
+      <div class="nav-tag">Método · Bootcamp · Primera generación</div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-grid">
+
+      <div>
+        <div class="eyebrow">Método DECIDIR®</div>
+
+        <h1>
+          SABES LO QUE TE PASA.
+          <span>PERO SIGUES HACIENDO LO MISMO.</span>
+        </h1>
+
+        <p class="hero-text">
+          No necesitas otra explicación sobre tus heridas.
+          Necesitas aprender qué hacer con lo que ya sabes cuando
+          el patrón vuelve a aparecer.
+        </p>
+
+        <div class="event-info">
+          <div>
+            <strong>BOOTCAMP DECIDIR®</strong>
+            <small>3 días de entrenamiento práctico</small>
+          </div>
+
+          <div>
+            <strong>ONLINE</strong>
+            <small>Primera generación</small>
+          </div>
+
+          <div>
+            <strong>USD 40</strong>
+            <small>Acceso al Bootcamp</small>
+          </div>
+        </div>
+
+        <a href="#inscripcion" class="btn">
+          Quiero formar parte
+        </a>
+      </div>
+
+      <div class="video-wrapper">
+        <div class="video-label">Mira la presentación del Bootcamp</div>
+
+        <!-- AQUÍ COLOCAREMOS LA VSL -->
+        <div class="video">
+          <div class="play"></div>
+
+          <div class="video-copy">
+            <strong>¿Por qué sigues haciendo lo mismo?</strong>
+            <small>Descubre qué propone el Método DECIDIR®</small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- PROBLEM -->
+  <section class="white-section">
+    <div class="container problem-grid">
+
+      <div>
+        <div class="section-label">El problema</div>
+
+        <h2>
+          Entender lo que te pasa no siempre significa saber qué hacer.
+        </h2>
+
+        <p class="lead">
+          Puedes conocer tus heridas, reconocer tus patrones y entender
+          de dónde vienen. Pero cuando vuelve a aparecer el mismo
+          disparador, puedes terminar reaccionando exactamente igual.
+        </p>
+      </div>
+
+      <div class="problem-list">
+
+        <div class="problem-item">
+          <span>01 —</span>
+          Sabes que algo te hace daño, pero vuelves a hacerlo.
+        </div>
+
+        <div class="problem-item">
+          <span>02 —</span>
+          Entiendes el patrón, pero no sabes cómo interrumpirlo.
+        </div>
+
+        <div class="problem-item">
+          <span>03 —</span>
+          Has acumulado información, pero te cuesta llevarla a la práctica.
+        </div>
+
+        <div class="problem-item">
+          <span>04 —</span>
+          Sabes que necesitas cambiar algo, pero sigues postergándolo.
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BLUE STATEMENT -->
+  <section class="blue-section">
+    <div class="container difference">
+
+      <div class="section-label" style="color:#BFD8F0;">
+        La nueva perspectiva
+      </div>
+
+      <div class="big-statement">
+        No necesitas más información.
+        Necesitas aprender qué hacer con lo que ya sabes.
+      </div>
+
+      <p class="dark-lead">
+        DECIDIR® nace para llevar la conciencia a la práctica.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- METHOD -->
+  <section style="background:#08090B;">
+    <div class="container">
+
+      <div class="method-intro">
+        <div class="section-label">El método</div>
+
+        <h2 style="color:white;">
+          La transformación comienza cuando conviertes conciencia en acción.
+        </h2>
+
+        <p class="dark-lead">
+          El Método DECIDIR® propone un recorrido para reconocer,
+          comprender, elegir, actuar y entrenar una nueva respuesta.
+        </p>
+      </div>
+
+      <div class="method-grid">
+
+        <div class="method-card">
+          <div class="method-number">01</div>
+          <h3>VER</h3>
+          <p>
+            Reconocer aquello que está sucediendo y que antes no estabas viendo.
+          </p>
+        </div>
+
+        <div class="method-card">
+          <div class="method-number">02</div>
+          <h3>COMPRENDER</h3>
+          <p>
+            Entender el origen del patrón y la estrategia que desarrollaste.
+          </p>
+        </div>
+
+        <div class="method-card">
+          <div class="method-number">03</div>
+          <h3>ELEGIR</h3>
+          <p>
+            Reconocer que existe una alternativa y decidir qué hacer con lo descubierto.
+          </p>
+        </div>
+
+        <div class="method-card">
+          <div class="method-number">04</div>
+          <h3>ACTUAR</h3>
+          <p>
+            Llevar esa decisión al presente mediante una acción concreta.
+          </p>
+        </div>
+
+        <div class="method-card">
+          <div class="method-number">05</div>
+          <h3>ENTRENAR</h3>
+          <p>
+            Repetir la nueva respuesta hasta convertirla en una forma diferente de actuar.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DAYS -->
+  <section class="white-section">
+    <div class="container">
+
+      <div class="section-label">El Bootcamp</div>
+
+      <h2>
+        Tres días para dejar de observar tu vida desde afuera y comenzar a intervenir en ella.
+      </h2>
+
+      <div class="days">
+
+        <div class="day-card">
+          <div class="day-number">DÍA 01</div>
+
+          <h3>VER</h3>
+
+          <p>
+            ¿Qué no estás viendo que está condicionando tus decisiones?
+          </p>
+
+          <div class="result">
+            “Ahora veo algo que antes no veía.”
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-number">DÍA 02</div>
+
+          <h3>ELEGIR</h3>
+
+          <p>
+            ¿Qué haces cuando aparece el patrón y qué otra respuesta puedes elegir?
+          </p>
+
+          <div class="result">
+            “Ahora sé que tengo una elección.”
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-number">DÍA 03</div>
+
+          <h3>ACTUAR</h3>
+
+          <p>
+            ¿Cómo llevas esa decisión al presente y comienzas a practicarla?
+          </p>
+
+          <div class="result">
+            “Hoy hice algo diferente.”
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DIFFERENCE -->
+  <section class="gray-section">
+    <div class="container difference">
+
+      <div class="section-label">Esto no es otro curso</div>
+
+      <h2>
+        No queremos que termines con más información.
+      </h2>
+
+      <div class="big-statement">
+        Queremos que termines haciendo algo diferente.
+      </div>
+
+      <p class="lead">
+        DECIDIR® es un entrenamiento. La comprensión es el comienzo.
+        La aplicación es donde comienza el cambio.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- AUTHORITY -->
+  <section class="white-section">
+    <div class="container authority-grid">
+
+      <div class="photo-placeholder">
+        Foto de Belén
+      </div>
+
+      <div>
+
+        <div class="section-label">La creadora</div>
+
+        <h2>Belén Díaz</h2>
+
+        <p class="lead">
+          Creadora del Método DECIDIR® y acompañante de procesos
+          de transformación personal.
+        </p>
+
+        <div class="authority-points">
+
+          <div class="authority-point">
+            <strong>Experiencia real</strong>
+            <span>
+              Acompañamiento de personas en procesos de transformación.
+            </span>
+          </div>
+
+          <div class="authority-point">
+            <strong>Eventos y escenarios</strong>
+            <span>
+              Experiencia frente a grandes audiencias y comunidades.
+            </span>
+          </div>
+
+          <div class="authority-point">
+            <strong>Una metodología propia</strong>
+            <span>
+              DECIDIR® nace para llevar la conciencia a la práctica.
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OFFER -->
+  <section class="blue-section" id="inscripcion">
+
+    <div class="container offer">
+
+      <div class="section-label" style="color:#BFD8F0;">
+        Primera generación
+      </div>
+
+      <h2 style="margin-left:auto;margin-right:auto;">
+        BOOTCAMP DECIDIR®
+      </h2>
+
+      <p class="dark-lead">
+        Tres días de entrenamiento práctico para comenzar a responder
+        de una manera diferente frente a los patrones que llevas tiempo repitiendo.
+      </p>
+
+      <div class="price">
+        $40 <span>USD</span>
+      </div>
+
+      <div class="included">
+
+        <div>3 días de entrenamiento online</div>
+        <div>Ejercicios prácticos</div>
+        <div>Herramientas de aplicación</div>
+        <div>Primera generación del método</div>
+
+      </div>
+
+      <!-- REEMPLAZAR ESTE ENLACE POR EL LINK REAL DE INSCRIPCIÓN -->
+      <a href="#" class="btn" style="background:white;color:#173B70;border-color:white;">
+        Quiero entrar al Bootcamp
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- FINAL -->
+  <section class="final" style="background:#08090B;">
+
+    <div class="container final-content">
+
+      <div class="section-label">
+        Método DECIDIR®
+      </div>
+
+      <h2>
+        Tus heridas pueden explicar tu historia.
+        Pero no deberían seguir escribiendo tu futuro.
+      </h2>
+
+      <p class="dark-lead" style="max-width:650px;margin:0 auto 35px;">
+        No necesitas esperar a sentirte preparado.
+        La decisión comienza en el presente.
+      </p>
+
+      <a href="#inscripcion" class="btn">
+        Quiero formar parte
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div>© Método DECIDIR® · Belén Díaz</div>
+      <div>Primera generación · Bootcamp online</div>
+    </div>
+  </footer>
+
+</body>
+</html>
