@@ -1,39 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Método DECIDIR® | Bootcamp</title>
+<title>DECIDIR® | Bootcamp</title>
 
-<meta name="description" content="Bootcamp DECIDIR® — tres días de entrenamiento práctico para comenzar a responder de una manera diferente frente a los patrones que llevas tiempo repitiendo.">
+<meta
+    name="description"
+    content="Tres días de entrenamiento práctico para comenzar a responder de una manera diferente frente a los patrones que llevas tiempo repitiendo."
+>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+    rel="stylesheet"
+>
 
 <style>
 
+/* =========================================================
+   VARIABLES
+========================================================= */
+
 :root{
-    --blue-1:#2c6fb0;
-    --blue-2:#174f82;
-    --blue-3:#0a2848;
-    --blue-4:#06182d;
 
-    --white:#ffffff;
-    --soft-white:rgba(255,255,255,.78);
-    --muted:rgba(255,255,255,.58);
-    --line:rgba(255,255,255,.16);
+    --lapis:#1456C8;
+    --lapis-bright:#176BFF;
+    --blue:#0B2F73;
+    --deep:#061532;
+    --deepest:#030B1B;
 
-    --accent:#75b5ee;
-    --accent-strong:#3fa0ed;
+    --white:#FFFFFF;
+    --soft-white:rgba(255,255,255,.80);
+    --muted:rgba(255,255,255,.56);
+
+    --line:rgba(255,255,255,.14);
+    --line-blue:rgba(38,118,255,.38);
 
     --serif:"Playfair Display", Georgia, serif;
     --sans:"DM Sans", Arial, sans-serif;
 
     --max:1180px;
 }
+
+
+/* =========================================================
+   RESET
+========================================================= */
 
 *{
     margin:0;
@@ -46,36 +65,51 @@ html{
 }
 
 body{
+
     font-family:var(--sans);
+
     color:var(--white);
+
     background:
         linear-gradient(
             135deg,
-            var(--blue-1) 0%,
-            var(--blue-2) 34%,
-            var(--blue-3) 72%,
-            var(--blue-4) 100%
+            var(--deepest) 0%,
+            var(--deep) 38%,
+            var(--blue) 72%,
+            #0A4DB7 100%
         );
+
     overflow-x:hidden;
+
+    line-height:1.6;
 }
 
-body:before{
+body::before{
+
     content:"";
+
     position:fixed;
+
     inset:0;
+
     pointer-events:none;
-    z-index:10;
+
+    z-index:50;
+
     background:
+
         radial-gradient(
-            circle at 80% 10%,
-            rgba(99,170,235,.12),
+            circle at 75% 15%,
+            rgba(23,107,255,.15),
             transparent 28%
         ),
+
         radial-gradient(
             circle at 15% 80%,
-            rgba(52,132,210,.08),
+            rgba(20,86,200,.12),
             transparent 30%
         );
+
 }
 
 a{
@@ -89,829 +123,1499 @@ img{
 }
 
 .container{
-    width:min(calc(100% - 48px), var(--max));
+
+    width:min(
+        calc(100% - 48px),
+        var(--max)
+    );
+
     margin:auto;
+
 }
 
-/* -------------------------
+
+/* =========================================================
    GLOBAL
-------------------------- */
+========================================================= */
 
 section{
+
     position:relative;
-    border-top:1px solid rgba(255,255,255,.08);
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.08);
+
 }
 
 .eyebrow{
+
     font-size:10px;
+
     font-weight:700;
+
     letter-spacing:4px;
+
     text-transform:uppercase;
-    color:var(--accent);
+
+    color:#55A0FF;
+
 }
 
 .serif{
+
     font-family:var(--serif);
+
 }
 
 .gradient-text{
-    color:var(--accent);
+
+    color:#5AA2FF;
+
     font-family:var(--serif);
+
     font-style:italic;
+
 }
 
+
+/* =========================================================
+   CTA
+========================================================= */
+
 .cta{
+
     display:inline-flex;
+
     align-items:center;
+
     justify-content:center;
-    min-height:52px;
-    padding:0 30px;
 
-    background:#fff;
-    color:#10395f;
+    min-height:54px;
 
-    font-size:11px;
+    padding:
+        0 30px;
+
+    background:#FFFFFF;
+
+    color:#08295E;
+
+    border:
+        1px solid
+        rgba(255,255,255,.65);
+
+    font-size:10px;
+
     font-weight:700;
+
     letter-spacing:1.8px;
+
     text-transform:uppercase;
 
-    transition:.25s ease;
-    border:1px solid rgba(255,255,255,.5);
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+
+    cursor:pointer;
+
 }
 
 .cta:hover{
+
     transform:translateY(-2px);
-    background:#eaf5ff;
+
+    background:#EAF2FF;
+
+    box-shadow:
+        0 12px 35px
+        rgba(0,0,0,.20);
+
 }
 
 .cta-blue{
-    background:var(--accent-strong);
-    color:white;
-    border-color:var(--accent-strong);
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFFFFF,
+            #EAF2FF
+        );
+
+    color:#08295E;
+
 }
 
-.cta-blue:hover{
-    background:#55aaf0;
-}
 
-/* -------------------------
+/* =========================================================
    HEADER
-------------------------- */
+========================================================= */
 
 .header{
+
     position:absolute;
+
     top:0;
+
     left:0;
+
     right:0;
+
     z-index:20;
 
-    padding:32px 0;
+    padding:30px 0;
+
 }
 
 .header-inner{
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
 }
 
 .logo{
+
     font-size:13px;
+
     font-weight:700;
+
     letter-spacing:5px;
+
+    color:#FFFFFF;
+
 }
 
 .header-right{
+
     font-size:9px;
+
     letter-spacing:3px;
+
     text-transform:uppercase;
-    color:rgba(255,255,255,.62);
+
+    color:
+        rgba(255,255,255,.58);
+
 }
 
-/* -------------------------
+
+/* =========================================================
    HERO
-------------------------- */
+========================================================= */
 
 .hero{
+
     min-height:100vh;
-    padding:115px 0 70px;
+
+    padding:
+        105px 0 70px;
+
+    display:flex;
+
+    align-items:center;
 
     background:
+
         radial-gradient(
-            circle at 88% 30%,
-            rgba(78,153,222,.17),
-            transparent 28%
+            circle at 50% 55%,
+            rgba(23,107,255,.34),
+            transparent 38%
         ),
+
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(24,104,255,.20),
+            transparent 25%
+        ),
+
         linear-gradient(
             135deg,
-            #2d70b1 0%,
-            #174f82 40%,
-            #0a294a 75%,
-            #06182d 100%
+            #030B1B 0%,
+            #071B3E 38%,
+            #0B397F 72%,
+            #0B4EB8 100%
         );
+
+    overflow:hidden;
+
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:680px;
+
+    height:680px;
+
+    border:
+        1px solid
+        rgba(49,133,255,.28);
+
+    border-radius:50%;
+
+    right:-270px;
+
+    top:10%;
+
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:520px;
+
+    height:520px;
+
+    border:
+        1px solid
+        rgba(49,133,255,.12);
+
+    border-radius:50%;
+
+    left:-280px;
+
+    bottom:-220px;
+
 }
 
 .hero-inner{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
     text-align:center;
+
 }
 
 .hero-copy{
-    max-width:940px;
-    margin:0 auto 28px;
+
+    max-width:850px;
+
+    margin:
+        0 auto 26px;
+
 }
 
 .hero .eyebrow{
-    margin-bottom:20px;
+
+    margin-bottom:18px;
+
 }
 
 .hero-title{
+
     font-family:var(--serif);
-    font-size:clamp(46px,7vw,88px);
-    line-height:.92;
+
+    font-size:
+        clamp(42px,6vw,76px);
+
+    line-height:.95;
+
     font-weight:400;
-    letter-spacing:-3px;
+
+    letter-spacing:-2.5px;
+
 }
 
 .hero-title .highlight{
+
     display:block;
-    color:var(--accent);
+
+    color:#5BA4FF;
+
     font-style:italic;
+
 }
 
 .hero-subtitle{
-    max-width:700px;
-    margin:24px auto 0;
 
-    color:var(--soft-white);
-    font-size:15px;
-    line-height:1.7;
+    max-width:620px;
+
+    margin:
+        18px auto 0;
+
+    color:
+        rgba(255,255,255,.70);
+
+    font-size:14px;
+
+    line-height:1.65;
+
 }
 
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
 .video-label{
-    margin:28px 0 12px;
+
+    margin:
+        20px 0 10px;
 
     font-size:9px;
+
     font-weight:700;
+
     letter-spacing:3px;
+
     text-transform:uppercase;
-    color:var(--accent);
+
+    color:#65A8FF;
+
 }
 
 .video-wrap{
-    width:min(900px,100%);
-    margin:0 auto;
 
-    aspect-ratio:16/9;
+    position:relative;
 
-    background:#06182d;
-    border:1px solid rgba(255,255,255,.2);
+    width:min(980px,100%);
+
+    margin:auto;
+
+    aspect-ratio:16 / 9;
+
+    background:#020817;
+
+    border:
+        1px solid
+        rgba(255,255,255,.20);
 
     box-shadow:
-        0 25px 70px rgba(0,0,0,.30);
+
+        0 35px 90px
+        rgba(0,0,0,.42),
+
+        0 0 80px
+        rgba(20,86,200,.18);
+
+    overflow:hidden;
+
+}
+
+.video-wrap::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    border:
+        1px solid
+        rgba(65,146,255,.18);
+
 }
 
 .video-wrap iframe{
+
     width:100%;
+
     height:100%;
-    border:0;
+
     display:block;
+
+    border:0;
+
 }
 
 .hero-cta{
-    margin-top:25px;
+
+    margin-top:22px;
+
 }
 
 .hero-note{
-    margin-top:13px;
 
-    font-size:10px;
-    letter-spacing:1.5px;
-    color:rgba(255,255,255,.5);
+    margin-top:11px;
+
+    font-size:9px;
+
+    letter-spacing:1.6px;
+
+    color:
+        rgba(255,255,255,.48);
+
 }
 
-/* -------------------------
+
+/* =========================================================
    PROBLEM
-------------------------- */
+========================================================= */
 
 .problem{
-    padding:120px 0;
+
+    padding:125px 0;
+
+    background:
+
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(24,105,255,.16),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #08255A,
+            #0B3C86
+        );
+
 }
 
 .problem-grid{
+
     display:grid;
-    grid-template-columns:1.05fr .95fr;
+
+    grid-template-columns:
+        1.05fr .95fr;
+
     gap:80px;
+
     align-items:center;
+
 }
 
 .problem-title{
-    margin-top:22px;
+
+    margin-top:18px;
 
     font-family:var(--serif);
-    font-size:clamp(42px,5vw,68px);
+
+    font-size:
+        clamp(42px,5vw,68px);
+
     line-height:.98;
+
     font-weight:400;
+
     letter-spacing:-2px;
+
 }
 
 .problem-title span{
-    color:var(--accent);
+
+    color:#62A8FF;
+
     font-style:italic;
+
 }
 
 .problem-description{
-    margin-top:25px;
-    max-width:590px;
 
-    color:var(--soft-white);
-    font-size:15px;
+    max-width:570px;
+
+    margin-top:28px;
+
+    color:
+        rgba(255,255,255,.70);
+
+    font-size:14px;
+
     line-height:1.8;
+
 }
 
 .problem-list{
-    border-top:1px solid var(--line);
+
+    border-top:
+        1px solid
+        var(--line);
+
 }
 
 .problem-item{
-    display:grid;
-    grid-template-columns:55px 1fr;
-    gap:15px;
 
-    padding:22px 0;
-    border-bottom:1px solid var(--line);
+    display:grid;
+
+    grid-template-columns:50px 1fr;
+
+    gap:20px;
+
+    padding:23px 0;
+
+    border-bottom:
+        1px solid
+        var(--line);
+
 }
 
 .problem-number{
-    color:var(--accent);
-    font-size:11px;
+
+    color:#55A0FF;
+
+    font-size:10px;
+
     letter-spacing:2px;
-    font-weight:600;
+
+    font-weight:700;
+
 }
 
 .problem-item p{
-    font-size:14px;
-    line-height:1.6;
-    color:var(--soft-white);
+
+    color:
+        rgba(255,255,255,.82);
+
+    font-size:13px;
+
 }
 
-/* -------------------------
+
+/* =========================================================
    PERSPECTIVE
-------------------------- */
+========================================================= */
 
 .perspective{
+
     padding:125px 0;
+
     text-align:center;
 
     background:
+
         radial-gradient(
-            ellipse at center,
-            rgba(68,147,218,.30),
-            transparent 65%
+            circle at 50% 50%,
+            rgba(20,86,200,.48),
+            transparent 52%
         ),
-        linear-gradient(
-            135deg,
-            #174f82,
-            #0b2d51,
-            #071a31
-        );
+
+        #082760;
+
 }
 
 .perspective-inner{
-    max-width:1000px;
-    margin:auto;
+
+    max-width:900px;
+
 }
 
 .perspective-title{
+
     margin-top:22px;
 
     font-family:var(--serif);
-    font-size:clamp(44px,6vw,76px);
-    line-height:1;
+
+    font-size:
+        clamp(45px,6vw,78px);
+
+    line-height:.96;
+
     font-weight:400;
+
     letter-spacing:-2.5px;
+
 }
 
 .perspective-title em{
-    color:var(--accent);
-    font-style:italic;
+
+    color:#5DA5FF;
+
 }
 
 .perspective-text{
-    max-width:690px;
-    margin:25px auto 0;
 
-    color:var(--soft-white);
-    font-size:15px;
+    max-width:650px;
+
+    margin:
+        28px auto 0;
+
+    color:
+        rgba(255,255,255,.70);
+
+    font-size:14px;
+
     line-height:1.8;
+
 }
 
-/* -------------------------
+
+/* =========================================================
    METHOD
-------------------------- */
+========================================================= */
 
 .method{
-    padding:120px 0;
+
+    padding:125px 0;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #071B3B,
+            #0A397D
+        );
+
 }
 
 .method-heading{
-    max-width:850px;
+
+    max-width:900px;
+
+    margin-bottom:55px;
+
 }
 
 .method-title{
-    margin-top:20px;
+
+    margin-top:18px;
 
     font-family:var(--serif);
-    font-size:clamp(44px,5.7vw,74px);
-    line-height:.98;
+
+    font-size:
+        clamp(44px,6vw,78px);
+
+    line-height:.95;
+
     font-weight:400;
+
     letter-spacing:-2.5px;
+
 }
 
 .method-description{
-    margin-top:25px;
+
     max-width:700px;
 
-    color:var(--soft-white);
+    margin-top:25px;
+
+    color:
+        rgba(255,255,255,.68);
+
+    font-size:14px;
+
     line-height:1.8;
-    font-size:15px;
+
 }
 
 .method-grid{
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    margin-top:55px;
 
-    border:1px solid var(--line);
+    display:grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    border:
+        1px solid
+        var(--line-blue);
+
 }
 
 .method-card{
-    min-height:250px;
-    padding:25px 20px;
 
-    border-right:1px solid var(--line);
+    min-height:270px;
+
+    padding:28px 24px;
+
+    border-right:
+        1px solid
+        var(--line-blue);
+
+    background:
+        rgba(7,30,70,.35);
+
 }
 
 .method-card:last-child{
+
     border-right:none;
+
 }
 
 .method-number{
+
+    color:#55A0FF;
+
     font-size:10px;
+
     letter-spacing:2px;
-    color:var(--accent);
+
+    font-weight:700;
+
 }
 
 .method-name{
+
     margin-top:45px;
 
     font-family:var(--serif);
+
     font-size:25px;
-    font-weight:400;
+
+    font-weight:500;
+
 }
 
 .method-card p{
-    margin-top:14px;
 
-    color:var(--soft-white);
+    margin-top:18px;
+
+    color:
+        rgba(255,255,255,.65);
+
     font-size:12px;
-    line-height:1.65;
+
+    line-height:1.7;
+
 }
 
-/* -------------------------
-   3 DAYS
-------------------------- */
+
+/* =========================================================
+   DAYS
+========================================================= */
 
 .days{
-    padding:120px 0;
+
+    padding:125px 0;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 10%,
+            rgba(23,107,255,.20),
+            transparent 32%
+        ),
+
+        linear-gradient(
+            135deg,
+            #0B397D,
+            #092A60
+        );
+
 }
 
 .days-title{
+
     max-width:900px;
 
+    margin:
+        20px 0 55px;
+
     font-family:var(--serif);
-    font-size:clamp(43px,5.5vw,70px);
-    line-height:1;
+
+    font-size:
+        clamp(44px,5.5vw,72px);
+
+    line-height:.98;
+
     font-weight:400;
-    letter-spacing:-2.5px;
+
+    letter-spacing:-2px;
+
 }
 
 .days-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:16px;
 
-    margin-top:55px;
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    border:
+        1px solid
+        var(--line-blue);
+
 }
 
 .day-card{
-    padding:34px 28px;
-    min-height:275px;
 
-    border:1px solid var(--line);
-    background:rgba(255,255,255,.025);
+    padding:35px;
+
+    min-height:320px;
+
+    border-right:
+        1px solid
+        var(--line-blue);
+
+    background:
+        rgba(3,18,48,.24);
+
+}
+
+.day-card:last-child{
+
+    border-right:none;
+
 }
 
 .day-number{
-    font-size:10px;
+
+    color:#55A0FF;
+
+    font-size:9px;
+
+    font-weight:700;
+
     letter-spacing:3px;
-    color:var(--accent);
+
 }
 
 .day-name{
-    margin-top:45px;
+
+    margin-top:50px;
 
     font-family:var(--serif);
-    font-size:32px;
+
+    font-size:34px;
+
     font-weight:400;
+
 }
 
 .day-question{
+
     margin-top:18px;
 
-    color:var(--soft-white);
+    color:
+        rgba(255,255,255,.70);
+
     font-size:13px;
+
     line-height:1.7;
+
 }
 
 .day-result{
-    margin-top:25px;
 
-    color:var(--accent);
-    font-size:12px;
-    font-weight:600;
+    margin-top:30px;
+
+    color:#68ACFF;
+
+    font-family:var(--serif);
+
+    font-size:14px;
+
+    font-style:italic;
+
 }
 
-/* -------------------------
-   NOT ANOTHER COURSE
-------------------------- */
+
+/* =========================================================
+   NOT COURSE
+========================================================= */
 
 .not-course{
-    padding:125px 0;
+
+    padding:130px 0;
+
     text-align:center;
 
     background:
+
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(23,107,255,.40),
+            transparent 50%
+        ),
+
         linear-gradient(
             135deg,
-            #2c6fb0 0%,
-            #174f82 45%,
-            #0a2848 100%
+            #071B3E,
+            #0C4DB8
         );
+
 }
 
 .not-course-title{
-    max-width:920px;
-    margin:20px auto 0;
+
+    max-width:900px;
+
+    margin:
+        20px auto 0;
 
     font-family:var(--serif);
-    font-size:clamp(44px,6vw,76px);
-    line-height:.98;
+
+    font-size:
+        clamp(44px,6vw,76px);
+
+    line-height:.96;
+
     font-weight:400;
+
     letter-spacing:-2.5px;
+
 }
 
 .not-course-title em{
-    color:var(--accent);
-    font-style:italic;
+
+    color:#60A7FF;
+
 }
 
 .not-course-text{
-    max-width:650px;
-    margin:25px auto 30px;
 
-    color:var(--soft-white);
-    line-height:1.8;
-    font-size:15px;
+    max-width:600px;
+
+    margin:
+        25px auto 30px;
+
+    color:
+        rgba(255,255,255,.68);
+
+    font-size:14px;
+
 }
 
-/* -------------------------
-   BELEN
-------------------------- */
+.not-course .cta{
+
+    margin-top:10px;
+
+}
+
+
+/* =========================================================
+   CREATOR
+========================================================= */
 
 .creator{
-    padding:120px 0;
-}
 
-.creator-grid{
-    display:grid;
-    grid-template-columns:.9fr 1.1fr;
-    gap:80px;
-    align-items:center;
-}
-
-.creator-photo{
-    width:100%;
-    background:rgba(255,255,255,.04);
-    border:1px solid var(--line);
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    overflow:hidden;
-}
-
-.creator-photo img{
-    width:100%;
-    height:auto;
-    object-fit:contain;
-}
-
-.creator-name{
-    margin-top:18px;
-
-    font-family:var(--serif);
-    font-size:clamp(44px,5vw,68px);
-    font-weight:400;
-    line-height:1;
-    letter-spacing:-2px;
-}
-
-.creator-intro{
-    margin-top:22px;
-
-    color:var(--soft-white);
-    font-size:15px;
-    line-height:1.8;
-}
-
-.creator-points{
-    margin-top:35px;
-
-    border-top:1px solid var(--line);
-}
-
-.creator-point{
-    padding:20px 0;
-    border-bottom:1px solid var(--line);
-}
-
-.creator-point strong{
-    display:block;
-    font-size:14px;
-}
-
-.creator-point span{
-    display:block;
-    margin-top:7px;
-
-    color:var(--soft-white);
-    font-size:13px;
-    line-height:1.6;
-}
-
-/* -------------------------
-   BOOTCAMP OFFER
-------------------------- */
-
-.offer{
     padding:125px 0;
 
     background:
-        radial-gradient(
-            circle at center,
-            rgba(68,154,225,.27),
-            transparent 60%
-        ),
+
         linear-gradient(
             135deg,
-            #174f82 0%,
-            #0d3157 50%,
-            #071a30 100%
+            #082860,
+            #0A3F8F
         );
+
 }
 
-.offer-inner{
-    max-width:1000px;
+.creator-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        .9fr 1.1fr;
+
+    gap:85px;
+
+    align-items:center;
+
+}
+
+.creator-photo{
+
+    position:relative;
+
+    max-width:480px;
+
     margin:auto;
-    text-align:center;
+
 }
 
-.offer-title{
+.creator-photo::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-18px;
+
+    border:
+        1px solid
+        rgba(50,135,255,.30);
+
+    border-radius:50%;
+
+    z-index:0;
+
+}
+
+.creator-photo img{
+
+    position:relative;
+
+    z-index:1;
+
+    width:100%;
+
+    aspect-ratio:4 / 5;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    border:
+        1px solid
+        rgba(255,255,255,.18);
+
+}
+
+.creator-name{
+
     margin-top:18px;
 
     font-family:var(--serif);
-    font-size:clamp(44px,6vw,74px);
-    line-height:.98;
+
+    font-size:
+        clamp(48px,6vw,76px);
+
     font-weight:400;
-    letter-spacing:-2.5px;
+
+    line-height:.95;
+
+    letter-spacing:-2px;
+
 }
 
-.offer-description{
-    max-width:700px;
-    margin:22px auto 0;
+.creator-intro{
 
-    color:var(--soft-white);
-    font-size:15px;
+    max-width:600px;
+
+    margin-top:25px;
+
+    color:
+        rgba(255,255,255,.70);
+
+    font-size:14px;
+
     line-height:1.8;
+
 }
 
-.price{
-    margin:35px 0 40px;
+.creator-points{
 
-    font-family:var(--serif);
-    font-size:76px;
-    line-height:1;
-}
-
-.price small{
-    font-family:var(--sans);
-    font-size:12px;
-    letter-spacing:2px;
-    vertical-align:middle;
-    color:var(--soft-white);
-}
-
-.includes{
-    text-align:left;
-
-    border:1px solid rgba(255,255,255,.22);
-    background:rgba(255,255,255,.035);
-}
-
-.includes-title{
-    padding:22px 28px;
-
-    font-size:10px;
-    font-weight:700;
-    letter-spacing:3px;
-    text-transform:uppercase;
-
-    color:var(--accent);
-
-    border-bottom:1px solid var(--line);
-}
-
-.includes-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-}
-
-.include{
-    padding:20px 28px;
-
-    border-bottom:1px solid var(--line);
-}
-
-.include:nth-child(odd){
-    border-right:1px solid var(--line);
-}
-
-.include:last-child,
-.include:nth-last-child(2){
-    border-bottom:none;
-}
-
-.check{
-    color:var(--accent);
-    margin-right:10px;
-}
-
-.include span{
-    font-size:13px;
-    color:var(--soft-white);
-}
-
-.offer-cta{
     margin-top:35px;
+
+    border-top:
+        1px solid
+        var(--line);
+
 }
 
-.urgency{
-    margin-top:15px;
+.creator-point{
 
-    color:rgba(255,255,255,.58);
-    font-size:10px;
-    letter-spacing:1.2px;
+    padding:20px 0;
+
+    border-bottom:
+        1px solid
+        var(--line);
+
 }
 
-/* -------------------------
-   FINAL CTA
-------------------------- */
+.creator-point strong{
 
-.final{
-    padding:130px 0 70px;
+    display:block;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.creator-point span{
+
+    display:block;
+
+    margin-top:5px;
+
+    color:
+        rgba(255,255,255,.58);
+
+    font-size:12px;
+
+}
+
+
+/* =========================================================
+   OFFER
+========================================================= */
+
+.offer{
+
+    padding:130px 0;
+
     text-align:center;
 
     background:
+
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(22,110,255,.50),
+            transparent 48%
+        ),
+
         linear-gradient(
             135deg,
-            #0a294a,
-            #06182d
+            #071B3D,
+            #0B4DB7
         );
+
+}
+
+.offer-inner{
+
+    max-width:1050px;
+
+    margin:auto;
+
+}
+
+.offer-title{
+
+    margin-top:18px;
+
+    font-family:var(--serif);
+
+    font-size:
+        clamp(48px,6vw,82px);
+
+    font-weight:400;
+
+    line-height:.95;
+
+    letter-spacing:-2px;
+
+}
+
+.offer-description{
+
+    max-width:680px;
+
+    margin:
+        25px auto 0;
+
+    color:
+        rgba(255,255,255,.72);
+
+    font-size:14px;
+
+    line-height:1.8;
+
+}
+
+.price{
+
+    margin-top:35px;
+
+    font-family:var(--serif);
+
+    font-size:
+        clamp(65px,8vw,100px);
+
+    line-height:1;
+
+}
+
+.price small{
+
+    font-family:var(--sans);
+
+    font-size:13px;
+
+    letter-spacing:3px;
+
+    color:
+        rgba(255,255,255,.68);
+
+}
+
+.includes{
+
+    margin-top:50px;
+
+    text-align:left;
+
+    border:
+        1px solid
+        var(--line-blue);
+
+    background:
+        rgba(3,16,42,.25);
+
+}
+
+.includes-title{
+
+    padding:22px 28px;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    color:#64A8FF;
+
+    border-bottom:
+        1px solid
+        var(--line-blue);
+
+}
+
+.includes-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+}
+
+.include{
+
+    padding:20px 28px;
+
+    border-bottom:
+        1px solid
+        var(--line);
+
+}
+
+.include:nth-child(odd){
+
+    border-right:
+        1px solid
+        var(--line);
+
+}
+
+.include:nth-last-child(-n+2){
+
+    border-bottom:none;
+
+}
+
+.include span{
+
+    color:
+        rgba(255,255,255,.76);
+
+    font-size:13px;
+
+}
+
+.check{
+
+    color:#5DA6FF;
+
+    margin-right:10px;
+
+}
+
+.offer-cta{
+
+    margin-top:35px;
+
+}
+
+.urgency{
+
+    margin-top:15px;
+
+    color:
+        rgba(255,255,255,.55);
+
+    font-size:10px;
+
+    letter-spacing:1.2px;
+
+}
+
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+.final{
+
+    padding:140px 0 70px;
+
+    text-align:center;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(20,86,200,.40),
+            transparent 45%
+        ),
+
+        linear-gradient(
+            135deg,
+            #061631,
+            #082D68
+        );
+
 }
 
 .final-title{
+
     max-width:950px;
-    margin:20px auto 0;
+
+    margin:
+        20px auto 0;
 
     font-family:var(--serif);
-    font-size:clamp(45px,6.5vw,82px);
+
+    font-size:
+        clamp(46px,6.5vw,82px);
+
     line-height:.95;
+
     font-weight:400;
-    letter-spacing:-3px;
+
+    letter-spacing:-2.5px;
+
 }
 
 .final-title em{
-    color:var(--accent);
+
+    color:#5DA5FF;
+
     font-style:italic;
+
 }
 
 .final-text{
-    max-width:620px;
-    margin:25px auto 30px;
 
-    color:var(--soft-white);
-    font-size:15px;
+    max-width:620px;
+
+    margin:
+        25px auto 30px;
+
+    color:
+        rgba(255,255,255,.68);
+
+    font-size:14px;
+
     line-height:1.8;
+
 }
 
 .final-note{
+
     margin-top:15px;
 
-    color:rgba(255,255,255,.45);
-    font-size:10px;
+    color:
+        rgba(255,255,255,.45);
+
+    font-size:9px;
+
     letter-spacing:1.5px;
+
 }
 
 .footer{
+
     display:flex;
+
     justify-content:space-between;
+
     gap:20px;
 
     padding-top:60px;
+
     margin-top:100px;
 
-    border-top:1px solid var(--line);
+    border-top:
+        1px solid
+        var(--line);
 
-    color:rgba(255,255,255,.4);
-    font-size:10px;
+    color:
+        rgba(255,255,255,.38);
+
+    font-size:9px;
+
 }
 
-/* -------------------------
-   RESPONSIVE
-------------------------- */
+
+/* =========================================================
+   TABLET
+========================================================= */
 
 @media(max-width:900px){
 
     .container{
-        width:min(calc(100% - 34px),700px);
+
+        width:
+            min(
+                calc(100% - 34px),
+                720px
+            );
+
     }
 
     .header{
+
         padding:22px 0;
+
     }
 
     .header-right{
+
         display:none;
+
     }
 
     .hero{
+
         min-height:auto;
-        padding:88px 0 55px;
+
+        padding:
+            88px 0 55px;
+
     }
 
     .hero-copy{
-        margin-bottom:18px;
-    }
 
-    .hero .eyebrow{
         margin-bottom:14px;
+
     }
 
     .hero-title{
-        font-size:clamp(39px,11vw,58px);
-        line-height:.94;
-        letter-spacing:-1.8px;
+
+        font-size:
+            clamp(39px,10vw,58px);
+
+        letter-spacing:-1.5px;
+
     }
 
     .hero-subtitle{
-        font-size:13px;
-        line-height:1.6;
-        margin-top:16px;
-    }
 
-    .video-label{
-        margin-top:20px;
-        margin-bottom:10px;
+        max-width:500px;
+
+        font-size:13px;
+
     }
 
     .video-wrap{
+
         width:100%;
+
     }
 
-    .hero-cta{
-        margin-top:20px;
+    .problem-grid,
+    .creator-grid{
+
+        grid-template-columns:1fr;
+
+        gap:55px;
+
     }
 
     .problem{
-        padding:80px 0;
-    }
 
-    .problem-grid{
-        grid-template-columns:1fr;
-        gap:45px;
-    }
+        padding:90px 0;
 
-    .problem-title{
-        font-size:clamp(40px,11vw,58px);
     }
 
     .perspective,
@@ -920,187 +1624,460 @@ section{
     .not-course,
     .creator,
     .offer{
-        padding:85px 0;
-    }
 
-    .perspective-title,
-    .method-title,
-    .days-title,
-    .not-course-title,
-    .offer-title{
-        font-size:clamp(40px,10.5vw,58px);
+        padding:90px 0;
+
     }
 
     .method-grid{
-        grid-template-columns:1fr;
+
+        grid-template-columns:
+            repeat(2,1fr);
+
     }
 
-    .method-card{
-        min-height:auto;
+    .method-card:nth-child(2){
+
         border-right:none;
-        border-bottom:1px solid var(--line);
-        padding:25px;
+
     }
 
-    .method-card:last-child{
-        border-bottom:none;
+    .method-card:nth-child(3){
+
+        border-top:
+            1px solid
+            var(--line-blue);
+
     }
 
-    .method-name{
-        margin-top:25px;
+    .method-card:nth-child(4){
+
+        border-top:
+            1px solid
+            var(--line-blue);
+
+    }
+
+    .method-card:nth-child(5){
+
+        grid-column:1 / -1;
+
+        border-top:
+            1px solid
+            var(--line-blue);
+
+        border-right:none;
+
     }
 
     .days-grid{
+
         grid-template-columns:1fr;
-        gap:12px;
+
     }
 
     .day-card{
-        min-height:auto;
+
+        border-right:none;
+
+        border-bottom:
+            1px solid
+            var(--line-blue);
+
     }
 
-    .creator-grid{
-        grid-template-columns:1fr;
-        gap:40px;
+    .day-card:last-child{
+
+        border-bottom:none;
+
     }
 
     .creator-photo{
-        max-width:600px;
-        margin:auto;
+
+        max-width:500px;
+
     }
 
-    .includes-grid{
-        grid-template-columns:1fr;
-    }
-
-    .include{
-        border-right:none !important;
-        border-bottom:1px solid var(--line) !important;
-    }
-
-    .include:last-child{
-        border-bottom:none !important;
-    }
-
-    .price{
-        font-size:65px;
-    }
-
-    .final{
-        padding:90px 0 55px;
-    }
-
-    .final-title{
-        font-size:clamp(41px,11vw,60px);
-        letter-spacing:-2px;
-    }
-
-    .footer{
-        margin-top:70px;
-        flex-direction:column;
-        text-align:center;
-    }
 }
 
-@media(max-width:500px){
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:600px){
 
     .container{
-        width:calc(100% - 28px);
+
+        width:
+            calc(100% - 28px);
+
     }
 
-    .hero{
-        padding-top:82px;
+    .header{
+
+        padding:18px 0;
+
     }
 
     .logo{
+
         font-size:11px;
+
         letter-spacing:4px;
+
     }
 
-    /* HERO MUCHO MÁS COMPACTO EN MOBILE */
+    .hero{
+
+        padding:
+            76px 0 42px;
+
+    }
+
+    .hero .eyebrow{
+
+        margin-bottom:12px;
+
+        font-size:8px;
+
+        letter-spacing:3px;
+
+    }
 
     .hero-title{
-        font-size:39px;
-        line-height:.95;
-        letter-spacing:-1.4px;
+
+        font-size:34px;
+
+        line-height:.96;
+
+        letter-spacing:-1.2px;
+
     }
 
     .hero-subtitle{
+
         display:none;
+
     }
 
     .video-label{
-        margin-top:18px;
+
+        margin-top:17px;
+
+        font-size:8px;
+
+        letter-spacing:2.4px;
+
     }
 
     .video-wrap{
-        aspect-ratio:16/9;
+
+        aspect-ratio:16 / 9;
+
+        width:100%;
+
+    }
+
+    .hero-cta{
+
+        margin-top:18px;
+
     }
 
     .cta{
-        min-height:50px;
-        padding:0 22px;
-        font-size:10px;
-        letter-spacing:1.5px;
+
+        min-height:49px;
+
+        padding:
+            0 20px;
+
+        font-size:9px;
+
+        letter-spacing:1.3px;
+
     }
 
     .hero-note{
-        font-size:9px;
+
+        font-size:8px;
+
     }
 
-    .problem-title{
-        font-size:40px;
+    .problem,
+    .perspective,
+    .method,
+    .days,
+    .not-course,
+    .creator,
+    .offer{
+
+        padding:
+            78px 0;
+
     }
 
-    .problem-description{
-        font-size:13px;
+    .eyebrow{
+
+        font-size:8px;
+
+        letter-spacing:3px;
+
     }
 
-    .problem-item{
-        grid-template-columns:42px 1fr;
-    }
-
+    .problem-title,
     .perspective-title,
     .method-title,
     .days-title,
     .not-course-title,
-    .offer-title{
-        font-size:40px;
+    .final-title{
+
+        font-size:39px;
+
+        line-height:.97;
+
+        letter-spacing:-1.4px;
+
     }
 
-    .method-card p,
-    .day-question,
-    .creator-point span,
-    .include span{
+    .problem-description,
+    .perspective-text,
+    .method-description,
+    .offer-description,
+    .final-text{
+
+        font-size:13px;
+
+        line-height:1.7;
+
+    }
+
+    .problem-grid{
+
+        gap:45px;
+
+    }
+
+    .problem-item{
+
+        grid-template-columns:
+            38px 1fr;
+
+        gap:12px;
+
+        padding:19px 0;
+
+    }
+
+    .problem-item p{
+
         font-size:12px;
+
+    }
+
+    .method-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .method-card{
+
+        min-height:auto;
+
+        padding:26px 22px;
+
+        border-right:none;
+
+        border-bottom:
+            1px solid
+            var(--line-blue);
+
+    }
+
+    .method-card:nth-child(2),
+    .method-card:nth-child(3),
+    .method-card:nth-child(4){
+
+        border-top:none;
+
+    }
+
+    .method-card:nth-child(5){
+
+        grid-column:auto;
+
+        border-bottom:none;
+
+    }
+
+    .method-name{
+
+        margin-top:30px;
+
+        font-size:27px;
+
+    }
+
+    .day-card{
+
+        min-height:auto;
+
+        padding:27px 23px;
+
+    }
+
+    .day-name{
+
+        margin-top:35px;
+
+        font-size:31px;
+
+    }
+
+    .creator-grid{
+
+        gap:50px;
+
+    }
+
+    .creator-photo::before{
+
+        inset:-10px;
+
     }
 
     .creator-name{
-        font-size:44px;
+
+        font-size:48px;
+
+    }
+
+    .creator-intro{
+
+        font-size:13px;
+
+    }
+
+    .includes-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .include{
+
+        border-right:none !important;
+
+        border-bottom:
+            1px solid
+            var(--line);
+
+    }
+
+    .include:last-child{
+
+        border-bottom:none;
+
+    }
+
+    .include span{
+
+        font-size:12px;
+
     }
 
     .price{
-        font-size:58px;
+
+        font-size:68px;
+
     }
 
-    .offer-description{
-        font-size:13px;
+    .price small{
+
+        font-size:10px;
+
     }
 
+    .final{
+
+        padding:
+            90px 0 50px;
+
+    }
+
+    .footer{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        margin-top:65px;
+
+        padding-top:35px;
+
+    }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE
+========================================================= */
+
+@media(max-width:390px){
+
+    .hero{
+
+        padding-top:72px;
+
+    }
+
+    .hero-title{
+
+        font-size:31px;
+
+    }
+
+    .video-label{
+
+        margin-top:15px;
+
+    }
+
+    .problem-title,
+    .perspective-title,
+    .method-title,
+    .days-title,
+    .not-course-title,
     .final-title{
-        font-size:40px;
+
+        font-size:35px;
+
+    }
+
+    .cta{
+
+        width:100%;
+
     }
 
 }
 
 </style>
+
 </head>
+
 
 <body>
 
-<!-- HEADER -->
+
+<!-- ======================================================
+     HEADER
+======================================================= -->
 
 <header class="header">
+
     <div class="container header-inner">
 
         <div class="logo">
@@ -1112,34 +2089,35 @@ section{
         </div>
 
     </div>
+
 </header>
 
 
-<!-- HERO -->
+
+<!-- ======================================================
+     HERO
+======================================================= -->
 
 <section class="hero">
 
     <div class="container hero-inner">
 
+
         <div class="hero-copy">
 
             <div class="eyebrow">
-                MÉTODO DECIDIR®
+                PRIMERA GENERACIÓN
             </div>
 
             <h1 class="hero-title">
-                SABES LO QUE<br>
-                TE PASA.
+
+                SABES LO QUE TE PASA.
+
                 <span class="highlight">
                     PERO SIGUES HACIENDO LO MISMO.
                 </span>
-            </h1>
 
-            <p class="hero-subtitle">
-                Entiendes lo que ocurre. Reconoces tus patrones.
-                Pero cuando vuelve a aparecer el mismo disparador,
-                puedes terminar respondiendo igual.
-            </p>
+            </h1>
 
         </div>
 
@@ -1148,11 +2126,12 @@ section{
             MIRA LA PRESENTACIÓN
         </div>
 
+
         <div class="video-wrap">
 
             <iframe
-                src="https://www.youtube-nocookie.com/embed/cMXY3ZsJBZc?rel=0"
-                title="Presentación del Bootcamp DECIDIR®"
+                src="https://www.youtube.com/embed/cMXY3ZsJBZc?rel=0"
+                title="Presentación del Bootcamp"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen>
             </iframe>
@@ -1161,25 +2140,38 @@ section{
 
 
         <div class="hero-cta">
-            <a href="#bootcamp" class="cta">
-                QUIERO TOMAR MI DECISIÓN
+
+            <a
+                href="https://buy.stripe.com/4gMcN4aq0bAC0TNdaB6Ri0l"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cta"
+            >
+                QUIERO ENTRAR AL BOOTCAMP
             </a>
+
         </div>
 
+
         <div class="hero-note">
-            PRIMERA GENERACIÓN · CUPOS LIMITADOS
+            TRES DÍAS · ENTRENAMIENTO ONLINE · USD 40
         </div>
+
 
     </div>
 
 </section>
 
 
-<!-- PROBLEMA -->
+
+<!-- ======================================================
+     PROBLEMA
+======================================================= -->
 
 <section class="problem">
 
     <div class="container problem-grid">
+
 
         <div>
 
@@ -1188,16 +2180,20 @@ section{
             </div>
 
             <h2 class="problem-title">
+
                 Entender lo que te pasa
                 no siempre significa
                 saber <span>qué hacer.</span>
+
             </h2>
 
             <p class="problem-description">
+
                 Puedes conocer tu historia, reconocer tus patrones
-                y comprender de dónde vienen. Sin embargo,
-                cuando aparece nuevamente el mismo disparador,
-                es posible volver a responder de la misma manera.
+                y comprender de dónde vienen. Sin embargo, cuando
+                aparece nuevamente el mismo disparador, puedes
+                terminar respondiendo de la misma manera.
+
             </p>
 
         </div>
@@ -1205,65 +2201,116 @@ section{
 
         <div class="problem-list">
 
-            <div class="problem-item">
-                <div class="problem-number">01</div>
-                <p>Sabes que algo te hace daño, pero vuelves a repetirlo.</p>
-            </div>
 
             <div class="problem-item">
-                <div class="problem-number">02</div>
-                <p>Reconoces el patrón, pero no encuentras cómo interrumpirlo.</p>
+
+                <div class="problem-number">
+                    01
+                </div>
+
+                <p>
+                    Sabes que algo te hace daño, pero vuelves a repetirlo.
+                </p>
+
             </div>
 
-            <div class="problem-item">
-                <div class="problem-number">03</div>
-                <p>Has acumulado información, pero te cuesta llevarla a la práctica.</p>
-            </div>
 
             <div class="problem-item">
-                <div class="problem-number">04</div>
-                <p>Sabes que necesitas cambiar algo, pero continúas postergándolo.</p>
+
+                <div class="problem-number">
+                    02
+                </div>
+
+                <p>
+                    Reconoces el patrón, pero no encuentras cómo interrumpirlo.
+                </p>
+
             </div>
+
+
+            <div class="problem-item">
+
+                <div class="problem-number">
+                    03
+                </div>
+
+                <p>
+                    Has acumulado información, pero te cuesta llevarla a la práctica.
+                </p>
+
+            </div>
+
+
+            <div class="problem-item">
+
+                <div class="problem-number">
+                    04
+                </div>
+
+                <p>
+                    Sabes que necesitas cambiar algo, pero continúas postergándolo.
+                </p>
+
+            </div>
+
 
         </div>
+
 
     </div>
 
 </section>
 
 
-<!-- NUEVA PERSPECTIVA -->
+
+<!-- ======================================================
+     NUEVA PERSPECTIVA
+======================================================= -->
 
 <section class="perspective">
 
     <div class="container perspective-inner">
 
+
         <div class="eyebrow">
             UNA NUEVA PERSPECTIVA
         </div>
 
+
         <h2 class="perspective-title">
+
             No necesitas más información.
+
             Necesitas aprender qué hacer con
+
             <em>lo que ya sabes.</em>
+
         </h2>
 
+
         <p class="perspective-text">
-            DECIDIR® nace para llevar la comprensión a la práctica:
-            reconocer lo que sucede, elegir una respuesta diferente
-            y comenzar a entrenarla.
+
+            El objetivo no es comprender más.
+            Es llevar lo que ya comprendes a una respuesta
+            diferente cuando vuelve a aparecer el patrón.
+
         </p>
+
 
     </div>
 
 </section>
 
 
-<!-- MÉTODO -->
+
+<!-- ======================================================
+     MÉTODO
+======================================================= -->
 
 <section class="method">
 
     <div class="container">
+
 
         <div class="method-heading">
 
@@ -1271,91 +2318,154 @@ section{
                 EL MÉTODO
             </div>
 
+
             <h2 class="method-title">
+
                 La transformación comienza
                 cuando conviertes conciencia
                 en <span class="gradient-text">acción.</span>
+
             </h2>
 
+
             <p class="method-description">
+
                 El Método DECIDIR® propone un recorrido para reconocer,
                 comprender, elegir, actuar y entrenar una nueva respuesta.
+
             </p>
 
         </div>
 
 
+
         <div class="method-grid">
 
+
             <div class="method-card">
-                <div class="method-number">01</div>
-                <h3 class="method-name">VER</h3>
+
+                <div class="method-number">
+                    01
+                </div>
+
+                <h3 class="method-name">
+                    VER
+                </h3>
+
                 <p>
                     Reconocer aquello que está sucediendo
                     y que antes no estabas viendo.
                 </p>
+
             </div>
 
+
             <div class="method-card">
-                <div class="method-number">02</div>
-                <h3 class="method-name">COMPRENDER</h3>
+
+                <div class="method-number">
+                    02
+                </div>
+
+                <h3 class="method-name">
+                    COMPRENDER
+                </h3>
+
                 <p>
                     Entender el origen del patrón
                     y la respuesta que has aprendido.
                 </p>
+
             </div>
 
+
             <div class="method-card">
-                <div class="method-number">03</div>
-                <h3 class="method-name">ELEGIR</h3>
+
+                <div class="method-number">
+                    03
+                </div>
+
+                <h3 class="method-name">
+                    ELEGIR
+                </h3>
+
                 <p>
                     Reconocer que existe una alternativa
                     y escoger cómo quieres responder.
                 </p>
+
             </div>
 
+
             <div class="method-card">
-                <div class="method-number">04</div>
-                <h3 class="method-name">ACTUAR</h3>
+
+                <div class="method-number">
+                    04
+                </div>
+
+                <h3 class="method-name">
+                    ACTUAR
+                </h3>
+
                 <p>
                     Llevar esa elección al presente
                     mediante una acción concreta.
                 </p>
+
             </div>
 
+
             <div class="method-card">
-                <div class="method-number">05</div>
-                <h3 class="method-name">ENTRENAR</h3>
+
+                <div class="method-number">
+                    05
+                </div>
+
+                <h3 class="method-name">
+                    ENTRENAR
+                </h3>
+
                 <p>
                     Repetir la nueva respuesta hasta
                     convertirla en una forma diferente de actuar.
                 </p>
+
             </div>
 
+
         </div>
+
 
     </div>
 
 </section>
 
 
-<!-- 3 DÍAS -->
+
+<!-- ======================================================
+     BOOTCAMP / 3 DÍAS
+======================================================= -->
 
 <section class="days">
 
     <div class="container">
 
+
         <div class="eyebrow">
             EL BOOTCAMP
         </div>
 
+
         <h2 class="days-title">
+
             Tres días para dejar de observar tu vida
             desde afuera y comenzar a intervenir en ella.
+
         </h2>
 
 
+
         <div class="days-grid">
+
 
             <div class="day-card">
 
@@ -1368,15 +2478,20 @@ section{
                 </h3>
 
                 <p class="day-question">
+
                     ¿Qué no estás viendo que está condicionando
                     tus respuestas?
+
                 </p>
 
                 <div class="day-result">
+
                     “Ahora veo algo que antes no veía.”
+
                 </div>
 
             </div>
+
 
 
             <div class="day-card">
@@ -1390,15 +2505,20 @@ section{
                 </h3>
 
                 <p class="day-question">
+
                     ¿Qué haces cuando aparece el patrón
                     y qué otra respuesta puedes escoger?
+
                 </p>
 
                 <div class="day-result">
+
                     “Ahora sé que existe otra posibilidad.”
+
                 </div>
 
             </div>
+
 
 
             <div class="day-card">
@@ -1412,145 +2532,222 @@ section{
                 </h3>
 
                 <p class="day-question">
+
                     ¿Cómo llevas esa elección al presente
                     y comienzas a ponerla en práctica?
+
                 </p>
 
                 <div class="day-result">
+
                     “Hoy hice algo diferente.”
+
                 </div>
 
             </div>
 
+
         </div>
+
 
     </div>
 
 </section>
 
 
-<!-- NO ES OTRO CURSO -->
+
+<!-- ======================================================
+     DIFERENCIA
+======================================================= -->
 
 <section class="not-course">
 
     <div class="container">
 
+
         <div class="eyebrow">
             ESTO NO ES OTRO CURSO
         </div>
 
+
         <h2 class="not-course-title">
+
             No vienes a aprender algo más.
+
             Vienes a empezar a
+
             <em>hacer algo diferente.</em>
+
         </h2>
 
+
         <p class="not-course-text">
+
             La comprensión es el comienzo.
             La aplicación es donde comienza el cambio.
+
         </p>
 
-        <a href="#bootcamp" class="cta cta-blue">
+
+        <a
+            href="https://buy.stripe.com/4gMcN4aq0bAC0TNdaB6Ri0l"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cta cta-blue"
+        >
             QUIERO DAR EL SIGUIENTE PASO
         </a>
+
 
     </div>
 
 </section>
 
 
-<!-- BELÉN -->
+
+<!-- ======================================================
+     BELÉN
+======================================================= -->
 
 <section class="creator">
 
     <div class="container creator-grid">
 
+
         <div class="creator-photo">
+
             <img
                 src="belen.jpeg"
                 alt="Belén Díaz"
             >
+
         </div>
 
 
+
         <div>
+
 
             <div class="eyebrow">
                 LA CREADORA
             </div>
 
+
             <h2 class="creator-name">
                 Belén Díaz
             </h2>
 
+
             <p class="creator-intro">
+
                 Creadora del Método DECIDIR® y acompañante
                 de procesos de transformación personal.
+
             </p>
+
 
 
             <div class="creator-points">
 
+
                 <div class="creator-point">
-                    <strong>Experiencia real</strong>
+
+                    <strong>
+                        Experiencia real
+                    </strong>
+
                     <span>
                         Acompañamiento de personas en procesos
                         de transformación.
                     </span>
+
                 </div>
 
+
+
                 <div class="creator-point">
-                    <strong>Eventos y escenarios</strong>
+
+                    <strong>
+                        Eventos y escenarios
+                    </strong>
+
                     <span>
                         Experiencia frente a grandes audiencias
                         y comunidades.
                     </span>
+
                 </div>
 
+
+
                 <div class="creator-point">
-                    <strong>Una metodología propia</strong>
+
+                    <strong>
+                        Una metodología propia
+                    </strong>
+
                     <span>
-                        DECIDIR® nace para llevar la conciencia
+                        Un recorrido creado para llevar la conciencia
                         a la práctica.
                     </span>
+
                 </div>
+
 
             </div>
 
+
         </div>
+
 
     </div>
 
 </section>
 
 
-<!-- OFERTA -->
+
+<!-- ======================================================
+     OFERTA
+======================================================= -->
 
 <section class="offer" id="bootcamp">
 
     <div class="container offer-inner">
 
+
         <div class="eyebrow">
             PRIMERA GENERACIÓN
         </div>
+
 
         <h2 class="offer-title">
             BOOTCAMP DECIDIR®
         </h2>
 
+
         <p class="offer-description">
+
             Tres días de entrenamiento práctico para comenzar
             a responder de una manera diferente frente a los
             patrones que llevas tiempo repitiendo.
+
         </p>
 
 
         <div class="price">
-            $40 <small>USD</small>
+
+            $40
+
+            <small>
+                USD
+            </small>
+
         </div>
 
 
+
         <div class="includes">
+
 
             <div class="includes-title">
                 TU ACCESO INCLUYE
@@ -1559,117 +2756,211 @@ section{
 
             <div class="includes-grid">
 
+
                 <div class="include">
+
                     <span>
-                        <b class="check">✓</b>
+
+                        <b class="check">
+                            ✓
+                        </b>
+
                         3 días de entrenamiento online
+
                     </span>
+
                 </div>
 
+
+
                 <div class="include">
+
                     <span>
-                        <b class="check">✓</b>
+
+                        <b class="check">
+                            ✓
+                        </b>
+
                         Entrenamiento práctico
+
                     </span>
+
                 </div>
 
+
+
                 <div class="include">
+
                     <span>
-                        <b class="check">✓</b>
+
+                        <b class="check">
+                            ✓
+                        </b>
+
                         Ejercicios de aplicación
+
                     </span>
+
                 </div>
 
+
+
                 <div class="include">
+
                     <span>
-                        <b class="check">✓</b>
+
+                        <b class="check">
+                            ✓
+                        </b>
+
                         Herramientas para interrumpir patrones
+
                     </span>
+
                 </div>
 
+
+
                 <div class="include">
+
                     <span>
-                        <b class="check">✓</b>
+
+                        <b class="check">
+                            ✓
+                        </b>
+
                         Primera generación del Método DECIDIR®
+
                     </span>
+
                 </div>
 
+
+
                 <div class="include">
+
                     <span>
-                        <b class="check">✓</b>
+
+                        <b class="check">
+                            ✓
+                        </b>
+
                         Espacio para comenzar a aplicar lo aprendido
+
                     </span>
+
                 </div>
+
 
             </div>
+
 
         </div>
 
 
+
         <div class="offer-cta">
 
-            <a href="#" class="cta">
+            <a
+                href="https://buy.stripe.com/4gMcN4aq0bAC0TNdaB6Ri0l"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cta"
+            >
                 QUIERO ENTRAR AL BOOTCAMP
             </a>
 
         </div>
 
+
         <p class="urgency">
-            Si sabes que necesitas hacerlo, no sigas postergándolo.
+
+            Si sabes que quieres hacerlo, este puede ser el momento de comenzar.
+
         </p>
+
 
     </div>
 
 </section>
 
 
-<!-- FINAL -->
+
+<!-- ======================================================
+     FINAL CTA
+======================================================= -->
 
 <section class="final">
 
     <div class="container">
 
+
         <div class="eyebrow">
-            MÉTODO DECIDIR®
+            EL SIGUIENTE PASO
         </div>
 
+
         <h2 class="final-title">
+
             Tu historia puede explicar
             lo que viviste.
-            <em>Pero no tiene que decidir lo que viene.</em>
+
+            <em>
+                Pero no tiene que decidir lo que viene.
+            </em>
+
         </h2>
 
+
         <p class="final-text">
+
             No necesitas esperar a sentirte preparado.
             Hay momentos en los que actuar diferente
             comienza con una sola elección.
+
         </p>
 
-        <a href="#bootcamp" class="cta cta-blue">
-            QUIERO TOMAR MI DECISIÓN
+
+        <a
+            href="https://buy.stripe.com/4gMcN4aq0bAC0TNdaB6Ri0l"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cta cta-blue"
+        >
+            QUIERO ENTRAR AL BOOTCAMP
         </a>
 
+
         <p class="final-note">
+
             PRIMERA GENERACIÓN · BOOTCAMP ONLINE
+
         </p>
+
 
 
         <div class="footer">
 
+
             <span>
-                © Método DECIDIR® · Belén Díaz
+                © DECIDIR® · Belén Díaz
             </span>
+
 
             <span>
                 Primera generación · Bootcamp online
             </span>
 
+
         </div>
+
 
     </div>
 
 </section>
 
 
+
 </body>
+
 </html>
