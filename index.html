@@ -15,15 +15,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
-  href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+  href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500&display=swap"
   rel="stylesheet"
 >
 
 <style>
-
-/* =========================================================
-   DECIDIR® — BASE
-   ========================================================= */
 
 :root {
   --blue: #12469B;
@@ -58,7 +54,7 @@ html {
 body {
   font-family: var(--sans);
   background: var(--deep);
-  color: var(--white);
+  color: #fff;
   overflow-x: hidden;
 }
 
@@ -68,8 +64,8 @@ a {
 }
 
 img {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
 
 .container {
@@ -86,9 +82,7 @@ img {
 
 .eyebrow {
   margin-bottom: 18px;
-
   color: var(--blue-bright);
-
   font-size: 10px;
   font-weight: 600;
   letter-spacing: .34em;
@@ -96,7 +90,7 @@ img {
 }
 
 /* =========================================================
-   PAGE BACKGROUND
+   BACKGROUND
    ========================================================= */
 
 .page {
@@ -104,10 +98,10 @@ img {
 
   background:
     radial-gradient(
-      circle at 50% 10%,
-      rgba(28,105,235,.68) 0%,
-      rgba(18,70,155,.54) 25%,
-      rgba(7,27,67,.95) 57%,
+      circle at 50% 8%,
+      rgba(34,113,244,.58) 0%,
+      rgba(18,70,155,.58) 28%,
+      rgba(7,27,67,.96) 62%,
       #030B1D 100%
     );
 }
@@ -120,11 +114,8 @@ img {
   position: absolute;
   top: 0;
   left: 0;
-
   width: 100%;
-
   z-index: 20;
-
   padding: 28px 0;
 }
 
@@ -136,22 +127,19 @@ img {
 
 .logo {
   color: #fff;
-
   font-family: var(--sans);
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 500;
-
   letter-spacing: .22em;
 }
 
 .logo sup {
-  font-size: 9px;
+  font-size: 8px;
   letter-spacing: 0;
 }
 
 .nav-link {
   color: rgba(255,255,255,.68);
-
   font-size: 10px;
   letter-spacing: .18em;
   text-transform: uppercase;
@@ -163,7 +151,6 @@ img {
 
 .cta {
   min-height: 54px;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -177,7 +164,6 @@ img {
 
   font-size: 10px;
   font-weight: 700;
-
   letter-spacing: .18em;
   text-transform: uppercase;
 
@@ -186,7 +172,6 @@ img {
 
 .cta:hover {
   transform: translateY(-2px);
-
   background: var(--blue-bright);
   border-color: var(--blue-bright);
   color: #fff;
@@ -204,7 +189,6 @@ img {
 
 .hero {
   position: relative;
-
   min-height: 100vh;
 
   display: flex;
@@ -224,7 +208,6 @@ img {
   height: 900px;
 
   border: 1px solid rgba(68,145,255,.18);
-
   border-radius: 50%;
 
   left: 50%;
@@ -236,7 +219,6 @@ img {
 .hero-content {
   position: relative;
   z-index: 3;
-
   text-align: center;
 }
 
@@ -246,22 +228,16 @@ img {
 
 .hero-title {
   max-width: 900px;
-
   margin: 0 auto 20px;
 
   font-family: var(--serif);
-
   font-size: clamp(38px, 5vw, 67px);
-
   font-weight: 400;
   line-height: 1.04;
-
-  letter-spacing: -.02em;
 }
 
 .hero-subtitle {
   max-width: 680px;
-
   margin: 0 auto 38px;
 
   color: var(--white-soft);
@@ -276,13 +252,11 @@ img {
 
 .video-wrapper {
   width: min(900px, 100%);
-
   margin: 0 auto;
 }
 
 .video-frame {
   width: 100%;
-
   aspect-ratio: 16 / 9;
 
   overflow: hidden;
@@ -299,7 +273,6 @@ img {
 .video-frame iframe {
   width: 100%;
   height: 100%;
-
   border: 0;
 }
 
@@ -309,9 +282,7 @@ img {
   color: rgba(255,255,255,.48);
 
   font-size: 9px;
-
   letter-spacing: .24em;
-
   text-transform: uppercase;
 }
 
@@ -320,34 +291,64 @@ img {
 }
 
 /* =========================================================
-   AUTHORITY — BELÉN
+   BELÉN — AUTORIDAD
    ========================================================= */
 
 .authority {
+  position: relative;
+  overflow: hidden;
+
+  padding: 145px 0 125px;
+
   background:
+    radial-gradient(
+      circle at 22% 50%,
+      rgba(30,111,255,.32),
+      transparent 35%
+    ),
     linear-gradient(
       180deg,
-      rgba(3,11,29,0) 0%,
-      rgba(3,11,29,.45) 100%
+      rgba(3,11,29,.05),
+      rgba(3,11,29,.52)
     );
+}
+
+.authority::before {
+  content: "";
+
+  position: absolute;
+
+  left: -180px;
+  top: 50%;
+
+  width: 650px;
+  height: 650px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(91,159,255,.18);
+
+  transform: translateY(-50%);
 }
 
 .authority-grid {
   display: grid;
 
-  grid-template-columns: .92fr 1.08fr;
+  grid-template-columns: 1fr 1fr;
 
   align-items: center;
 
-  gap: 80px;
+  gap: 65px;
 }
 
-/* FOTO */
+/* ---------------------------------------------------------
+   BELÉN PHOTO
+   --------------------------------------------------------- */
 
 .belen-visual {
   position: relative;
 
-  min-height: 650px;
+  min-height: 690px;
 
   display: flex;
   align-items: flex-end;
@@ -357,17 +358,17 @@ img {
 .belen-glow {
   position: absolute;
 
-  width: 430px;
-  height: 430px;
+  width: 510px;
+  height: 510px;
 
   border-radius: 50%;
 
-  background: rgba(25,105,255,.34);
+  background: rgba(25,105,255,.38);
 
   filter: blur(90px);
 
   left: 50%;
-  bottom: 70px;
+  bottom: 55px;
 
   transform: translateX(-50%);
 }
@@ -375,15 +376,15 @@ img {
 .belen-ring {
   position: absolute;
 
-  width: 530px;
-  height: 530px;
+  width: 570px;
+  height: 570px;
 
   border-radius: 50%;
 
-  border: 1px solid rgba(75,150,255,.28);
+  border: 1px solid rgba(82,154,255,.28);
 
   left: 50%;
-  bottom: 35px;
+  bottom: 38px;
 
   transform: translateX(-50%);
 }
@@ -392,67 +393,77 @@ img {
   position: relative;
   z-index: 3;
 
-  width: min(580px, 108%);
+  width: min(620px, 112%);
 
-  max-height: 680px;
+  max-height: 720px;
 
   object-fit: contain;
   object-position: bottom center;
 
   filter:
-    drop-shadow(0 35px 55px rgba(0,0,0,.38));
+    drop-shadow(0 35px 55px rgba(0,0,0,.42));
 }
 
-/* COPY */
+/* ---------------------------------------------------------
+   BELÉN COPY
+   --------------------------------------------------------- */
 
 .authority-copy {
   max-width: 650px;
 }
 
 .authority-title {
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 
   font-family: var(--serif);
 
-  font-size: clamp(48px, 5vw, 72px);
+  font-size: clamp(52px, 5.5vw, 78px);
 
   font-weight: 400;
-  line-height: 1;
+
+  line-height: .98;
+
+  letter-spacing: -.025em;
 }
 
 .authority-description {
-  margin-bottom: 34px;
+  max-width: 610px;
 
-  max-width: 620px;
+  margin-bottom: 38px;
 
-  color: var(--white-soft);
+  color: rgba(255,255,255,.82);
 
   font-size: 15px;
-  line-height: 1.8;
+
+  line-height: 1.85;
 }
 
-/* STATS */
+/* ---------------------------------------------------------
+   AUTHORITY STATS
+   --------------------------------------------------------- */
 
 .authority-stats {
   display: grid;
 
   grid-template-columns: 1fr 1fr;
 
+  margin-bottom: 34px;
+
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 
 .authority-stat {
-  padding: 25px 20px 25px 0;
+  padding: 30px 20px 30px 0;
 
   display: flex;
   align-items: center;
 
-  gap: 16px;
+  gap: 18px;
 }
 
 .authority-stat + .authority-stat {
-  padding-left: 20px;
+  padding-left: 25px;
 
   border-left: 1px solid var(--line);
 }
@@ -460,17 +471,21 @@ img {
 .authority-number {
   color: var(--blue-bright);
 
-  font-size: 39px;
+  font-size: 47px;
+
   font-weight: 600;
 
-  letter-spacing: -.04em;
+  line-height: 1;
+
+  letter-spacing: -.05em;
+
+  white-space: nowrap;
 }
 
 .authority-label {
   display: flex;
   flex-direction: column;
-
-  gap: 4px;
+  gap: 6px;
 }
 
 .authority-label strong {
@@ -478,39 +493,40 @@ img {
 
   font-size: 10px;
 
-  letter-spacing: .15em;
+  letter-spacing: .16em;
 
   text-transform: uppercase;
 }
 
 .authority-label span {
-  color: var(--white-muted);
+  color: rgba(255,255,255,.48);
 
   font-size: 9px;
 
-  letter-spacing: .12em;
+  letter-spacing: .13em;
 
   text-transform: uppercase;
 }
 
-/* METHOD MINI */
+/* ---------------------------------------------------------
+   METHOD MINI
+   --------------------------------------------------------- */
 
 .method-mini {
-  margin-top: 35px;
+  margin-top: 30px;
 }
 
 .method-mini-header {
   display: flex;
   align-items: center;
 
-  gap: 14px;
+  gap: 15px;
 
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .method-mini-header strong {
   font-size: 12px;
-
   letter-spacing: .2em;
 }
 
@@ -529,11 +545,11 @@ img {
 
   margin-bottom: 20px;
 
-  color: var(--white-muted);
+  color: rgba(255,255,255,.56);
 
   font-size: 13px;
 
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 .method-mini-steps {
@@ -546,16 +562,16 @@ img {
 }
 
 .method-mini-step {
-  padding: 17px 10px 17px 0;
+  padding: 18px 10px 18px 0;
 
   display: flex;
   flex-direction: column;
 
-  gap: 6px;
+  gap: 7px;
 }
 
 .method-mini-step + .method-mini-step {
-  padding-left: 16px;
+  padding-left: 18px;
 
   border-left: 1px solid var(--line-soft);
 }
@@ -564,21 +580,26 @@ img {
   color: var(--blue-bright);
 
   font-size: 9px;
+
   letter-spacing: .15em;
 }
 
 .method-mini-step strong {
   font-size: 10px;
-  letter-spacing: .12em;
+
+  letter-spacing: .13em;
 }
 
-/* INSTAGRAM */
+/* ---------------------------------------------------------
+   INSTAGRAM
+   --------------------------------------------------------- */
 
 .social-link {
   display: inline-flex;
 
-  margin-top: 27px;
-  padding-bottom: 7px;
+  margin-top: 30px;
+
+  padding-bottom: 8px;
 
   color: var(--blue-bright);
 
@@ -586,9 +607,16 @@ img {
 
   font-size: 10px;
 
-  letter-spacing: .16em;
+  letter-spacing: .17em;
 
   text-transform: uppercase;
+
+  transition: .2s ease;
+}
+
+.social-link:hover {
+  color: #fff;
+  border-color: #fff;
 }
 
 /* =========================================================
@@ -596,8 +624,7 @@ img {
    ========================================================= */
 
 .transition {
-  padding: 100px 0;
-
+  padding: 105px 0;
   text-align: center;
 }
 
@@ -795,7 +822,7 @@ img {
 }
 
 /* =========================================================
-   PREMIUM PRICE
+   PRICE
    ========================================================= */
 
 .price-section {
@@ -878,8 +905,6 @@ img {
   line-height: 1.7;
 }
 
-/* INCLUDED */
-
 .included-title {
   margin-bottom: 18px;
 
@@ -935,7 +960,7 @@ img {
 }
 
 /* =========================================================
-   FINAL
+   FINAL CTA
    ========================================================= */
 
 .final {
@@ -996,6 +1021,7 @@ img {
   display: flex;
 
   align-items: center;
+
   justify-content: space-between;
 }
 
@@ -1031,7 +1057,6 @@ img {
 
   .hero {
     min-height: auto;
-
     padding: 105px 0 65px;
   }
 
@@ -1044,18 +1069,29 @@ img {
     font-size: 42px;
   }
 
+  .authority {
+    padding: 100px 0 90px;
+  }
+
   .authority-grid {
     grid-template-columns: 1fr;
-
     gap: 45px;
   }
 
   .belen-visual {
-    min-height: 540px;
+    min-height: 620px;
   }
 
   .belen-image {
-    width: min(500px, 100%);
+    width: min(560px, 105%);
+  }
+
+  .authority-copy {
+    max-width: 100%;
+  }
+
+  .authority-title {
+    font-size: 65px;
   }
 
   .method-grid {
@@ -1068,7 +1104,6 @@ img {
 
   .method-card + .method-card {
     border-left: 0;
-
     border-top: 1px solid var(--line);
   }
 
@@ -1118,23 +1153,18 @@ img {
 
   .hero-title {
     max-width: 350px;
-
     font-size: 30px;
-
     line-height: 1.07;
   }
 
   .hero-subtitle {
     max-width: 350px;
-
     margin-bottom: 25px;
-
     font-size: 12px;
   }
 
   .video-caption {
     font-size: 8px;
-
     letter-spacing: .17em;
   }
 
@@ -1144,41 +1174,51 @@ img {
 
   .cta {
     width: 100%;
-
     min-height: 52px;
-
     padding: 0 18px;
-
     font-size: 9px;
   }
 
   /* BELÉN */
 
+  .authority {
+    padding: 80px 0 75px;
+  }
+
+  .authority-grid {
+    gap: 25px;
+  }
+
   .belen-visual {
-    min-height: 450px;
+    min-height: 470px;
   }
 
   .belen-ring {
-    width: 360px;
-    height: 360px;
+    width: 365px;
+    height: 365px;
+
+    bottom: 30px;
   }
 
   .belen-glow {
-    width: 280px;
-    height: 280px;
+    width: 300px;
+    height: 300px;
+
+    bottom: 50px;
   }
 
   .belen-image {
-    width: 100%;
+    width: 112%;
     max-height: 540px;
   }
 
   .authority-title {
-    font-size: 47px;
+    font-size: 49px;
   }
 
   .authority-description {
     font-size: 13px;
+    line-height: 1.75;
   }
 
   .authority-stats {
@@ -1186,15 +1226,17 @@ img {
   }
 
   .authority-stat {
-    padding: 21px 0;
+    padding: 22px 0;
   }
 
   .authority-stat + .authority-stat {
     padding-left: 0;
-
     border-left: 0;
-
     border-top: 1px solid var(--line);
+  }
+
+  .authority-number {
+    font-size: 43px;
   }
 
   .method-mini-steps {
@@ -1207,9 +1249,7 @@ img {
 
   .method-mini-step + .method-mini-step {
     padding-left: 0;
-
     border-left: 0;
-
     border-top: 1px solid var(--line-soft);
   }
 
@@ -1249,7 +1289,6 @@ img {
 
   .day {
     min-height: auto;
-
     padding: 30px 24px;
   }
 
@@ -1289,38 +1328,8 @@ img {
 
   .footer-inner {
     flex-direction: column;
-
     gap: 15px;
-
     text-align: center;
-  }
-}
-
-/* =========================================================
-   EXTRA SMALL
-   ========================================================= */
-
-@media (max-width: 390px) {
-
-  .hero-title {
-    font-size: 28px;
-  }
-
-  .authority-title {
-    font-size: 42px;
-  }
-
-  .belen-visual {
-    min-height: 390px;
-  }
-
-  .belen-ring {
-    width: 320px;
-    height: 320px;
-  }
-
-  .price {
-    font-size: 72px;
   }
 }
 
@@ -1331,6 +1340,7 @@ img {
 <body>
 
 <div class="page">
+
 
 <!-- =======================================================
      NAV
@@ -1385,18 +1395,16 @@ img {
       </p>
 
 
-      <!-- VIDEO -->
-
       <div class="video-wrapper">
 
         <div class="video-frame">
 
-         <iframe
-  src="https://www.youtube.com/embed/RhvCgXht_RI"
-  title="Presentación Bootcamp DECIDIR®"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  allowfullscreen>
-</iframe>
+          <iframe
+            src="https://www.youtube.com/embed/RhvCgXht_RI"
+            title="Presentación Bootcamp DECIDIR®"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
 
         </div>
 
@@ -1438,7 +1446,7 @@ img {
     <div class="authority-grid">
 
 
-      <!-- FOTO -->
+      <!-- FOTO DE BELÉN SIN FONDO -->
 
       <div class="belen-visual">
 
@@ -1455,7 +1463,7 @@ img {
       </div>
 
 
-      <!-- INFORMACIÓN -->
+      <!-- AUTORIDAD -->
 
       <div class="authority-copy">
 
@@ -1475,7 +1483,7 @@ img {
         </p>
 
 
-        <!-- AUTORIDAD -->
+        <!-- DATOS DE AUTORIDAD -->
 
         <div class="authority-stats">
 
@@ -1591,15 +1599,13 @@ img {
         </div>
 
 
-        <!-- INSTAGRAM -->
-
         <a
           href="https://www.instagram.com/soybelendiaz/"
           class="social-link"
           target="_blank"
           rel="noopener"
         >
-          Instagram · @soybelendiaz ↗
+          Instagram · @SOYBELENDIAZ →
         </a>
 
       </div>
@@ -1664,7 +1670,6 @@ img {
 
 
     <div class="method-grid">
-
 
       <div class="method-card">
 
@@ -1753,7 +1758,6 @@ img {
 
 
       <div class="days">
-
 
         <div class="day">
 
@@ -1844,6 +1848,7 @@ img {
 
       <div class="price">
         €40
+
         <span class="price-currency">
           EUR
         </span>
@@ -1901,7 +1906,7 @@ img {
 
 
       <p class="urgency">
-        Si sabes que necesitas hacerlo, no sigas postergándolo.
+        Si sabes que quieres hacerlo, este puede ser el momento de comenzar.
       </p>
 
     </div>
